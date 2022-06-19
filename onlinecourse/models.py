@@ -103,7 +103,7 @@ class Enrollment(models.Model):
     # Other fields and methods you would like to design
 class Question(models.Model):
     # Foreign key to lesson
-    lesson_id = models.ForeignKey(Lesson, on_delete=models.CASCADE)
+    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
     # question text
     question_text = models.TextField(null=False)
     # question grade/mark
@@ -127,7 +127,7 @@ class Question(models.Model):
     # Other fields and methods you would like to design
 class Choice(models.Model):
     # Foreign Key to Question
-    question_id = models.ForeignKey(Question, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
     # Choice text
     choice_text = models.TextField(null=False)
     # Is this the correct choice?
